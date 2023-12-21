@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Login</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+        api_key: SUA_API_KEY
+    </script>
+
+    <style>
+        @charset "UTF-8";
+
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        @font-face {
+            font-family: 'Android';
+            src: url('../fontes/idroid.otf') format('opentype');
+            font-weight: normal;
+        }
+
+        :root {
+            --cor0: #ebe5c5;
+            --cor1: #6eb8e0;
+            --cor2: #3d9fdc;
+            --cor3: #2f68a8;
+            --cor4: #1a305c;
+            --cor5: #1a063d;
+
+            --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+            --fonte-destaque: 'Bebas Neue', cursive;
+            --fonte-android: 'Android', cursive;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: var(--cor0);
+            font-family: var(--fonte-padrao);
+        }
+
+        a.externo::after {
+            content: '\00A0\1F517';
+        }
+
+        main p {
+            margin: 15px 0px;
+            text-align: justify;
+            text-indent: 30px;
+            line-height: 2em;
+            font-size: 1em;
+        }
+
+        main strong {
+            color: var(--cor4);
+            font-weight: bold;
+        }
+
+        main a {
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--cor5);
+        }
+
+        main a:hover {
+            text-decoration: underline;
+            color: var(--cor4);
+        }
+
+        header {
+            background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+            min-height: 150px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        nav {
+            background-color: var(--cor5);
+            padding: 10px;
+            box-shadow: 0px 7px 7px rgb(0, 0, 0.192)
+        }
+
+        nav>a {
+            color: var(--cor1);
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition-duration: 0.5s;
+        }
+
+        nav>a:hover {
+            background-color: var(--cor3);
+            color: var(--cor5)
+        }
+
+        main {
+            min-width: 300px;
+            max-width: 1000px;
+            padding: 20px;
+            margin: auto;
+            margin-bottom: 30px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0.418);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        header>p {
+            color: white;
+            font-family: var(--cor4);
+            font-size: 1.2em;
+            max-width: 500px;
+            margin: auto;
+            margin-bottom: 30px;
+            padding-right: 10px;
+            padding-left: 10px;
+            text-shadow: 2px 2px 0px rgb(0, 0, 0.315);
+        }
+
+        header>h1 {
+            color: white;
+            font-family: var(--fonte-destaque);
+            font-size: 3em;
+            font-weight: normal;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px rgb(0, 0, 0.267);
+        }
+
+        main h1 {
+            color: var(--cor5);
+            font-family: var(--fonte-android);
+            font-size: 1.8em;
+        }
+
+        main h2 {
+            font-family: var(--fonte-android);
+            color: var(--cor4);
+            font-size: 1.3em;
+            font-weight: normal;
+            background-image: linear-gradient(to right, var(--cor1), transparent);
+            text-indent: 8px;
+        }
+
+        main img {
+            width: 100%;
+        }
+
+        main img.pequena {
+            max-width: 350px;
+            display: block;
+            margin: auto;
+        }
+
+        div.video {
+            background-color: var(--cor5);
+            margin: 0px -20px 30px -20px;
+            padding: 20px;
+            padding-bottom: 57%;
+            position: relative;
+        }
+
+        div.video>iframe {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+        }
+
+        aside {
+            background-color: var(--cor1);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+        }
+
+        aside h3 {
+            background-color: var(--cor4);
+            color: white;
+            padding: 10px;
+            margin: -10px -10px 0px -10px;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        aside>ul {
+            list-style-type: '\2714\00A0\00A0';
+            list-style-position: inside;
+            columns: 2;
+        }
+
+        footer {
+            background-color: var(--cor5);
+            color: white;
+            text-align: center;
+            font-size: 0.8em;
+            padding: 5px;
+        }
+
+        footer a {
+            color: white;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: var(--cor1)
+        }
+    </style>
+</head>
+</head>
+<header>
+    <h1>Curiosidades de Tecnologia</h1>
+
+    <p>Tudo o que você sempre quis saber sobre o mundo tech, em um único lugar.</p>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="noticias.html">Notícias</a>
+    <a href="login.html">Entre/Cadastre-se</a>
+    <a href="faleconosco.html">Fale Conosco</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="forum.html">Fórum</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="software.html">Software</a>
+    <a href="redesociais.html">Redes Sociais</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="termosediretrizes.html">Termos e Diretrizes de Privacidade</a>
+</nav>
+<body>
+
+    <form>
+        <h2>Entre/Cadastre-se</h2>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <div class="oauth-buttons">
+        <!-- Botão de Login com Google -->
+        <a href="URL_DO_SEU_LOGIN_COM_GOOGLE">Login com Google</a>
+
+        <!-- Botão de Login com LinkedIn -->
+        <a href="URL_DO_SEU_LOGIN_COM_LINKEDIN">Login com LinkedIn</a>
+
+        <!-- Botão de Login com GitHub -->
+        <a href="URL_DO_SEU_LOGIN_COM_GITHUB">Login com GitHub</a>
+    </div>
+
+    <script>
+        // Adicione scripts para login com Google, LinkedIn e GitHub conforme necessário
+    </script>
+
+</body>
+<footer>
+    <p>&copy; 2023 TechNews. Todos os direitos reservados.</p>
+    <p>Site criado por: Eduarda Reis, Marcelo Faro, Sávio França e <a
+            href="https://github.com/EduardoSilvaCordovil" target="_blank" rel="noopner noreferrer">Eduardo
+            Silva Cordovil</a> para o <a href="https://www.youtube.com/cursoemvideo" target="_blank"
+            rel="noopner noreferrer">CursoemVideo</a>.</p>
+</footer>
+</html>
